@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestProject
 {
@@ -11,6 +8,7 @@ namespace TestProject
         {
             Console.WriteLine("Hello, world");
             Console.WriteLine("{0}+{1}={2}",1.1,1.2,(1.1+1.2));
+            Console.ReadKey();
         }
     }
 }
