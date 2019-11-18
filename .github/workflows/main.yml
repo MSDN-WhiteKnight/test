@@ -1,6 +1,6 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -11,7 +11,12 @@ jobs:
     - uses: actions/checkout@v1    
     - name: Build with MSBuild
       run: |
-        & "$env:windir\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"        
+        & "$env:windir\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
+    - name: Archive build results
+      uses: actions/upload-artifact@v1
+      with:
+          name: Output
+          path: TestProject\bin\Debug\
     - name: Run
       run: |        
         TestProject\bin\Debug\TestProject.exe
