@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v1    
     - name: Build with MSBuild
       run: |
-        %WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe       
+        Start-Process -FilePath "$env:windir\Microsoft.NET\Framework\v4.0.30319\msbuild.exe" -NoNewWindow       
