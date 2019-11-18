@@ -1,0 +1,14 @@
+name: OnComment
+
+on: [issue_comment]
+
+jobs:
+  on-comment:
+
+    runs-on: windows-latest
+
+    steps:        
+    - name: On comment
+      shell: cmd
+      run: |
+        echo {{ github.event }}
