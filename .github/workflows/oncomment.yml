@@ -2,9 +2,6 @@ name: OnComment
 
 on: [issue_comment]
 
-env:
-  EVENT_DATA: ${{ github.event }}
-
 jobs:
   on-comment:
 
@@ -13,5 +10,7 @@ jobs:
     steps:
     - name: On comment
       shell: cmd
+      env:
+        EVENT_DATA: ${{ toJson(github.event) }}
       run: |
         echo %EVENT_DATA%
