@@ -6,9 +6,12 @@ jobs:
   on-comment:
 
     runs-on: windows-latest
+    
+    env:
+      EVENT_DATA: ${{ github.event }}
 
-    steps:        
+    steps:
     - name: On comment
       shell: cmd
       run: |
-        echo {{ github.event }}
+        echo %EVENT_DATA%
