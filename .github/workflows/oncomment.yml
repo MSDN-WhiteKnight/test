@@ -2,14 +2,14 @@ name: OnComment
 
 on: [issue_comment]
 
+env:
+  EVENT_DATA: ${{ github.event }}
+
 jobs:
   on-comment:
 
     runs-on: windows-latest
     
-    env:
-      EVENT_DATA: ${{ github.event }}
-
     steps:
     - name: On comment
       shell: cmd
