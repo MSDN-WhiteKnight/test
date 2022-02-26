@@ -9,9 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout current branch
+    - name: Checkout branch
       run: |
-        git checkout $env:GITHUB_REF_NAME    
+        git fetch; git checkout ci-update    
     - name: Load data
       run: |
         [System.IO.File]::WriteAllText("1.txt","1.txt")
