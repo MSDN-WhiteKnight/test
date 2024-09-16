@@ -12,11 +12,6 @@ jobs:
     - name: Build with MSBuild
       run: |
         & "$env:windir\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
-    - name: Archive build results
-      uses: actions/upload-artifact@v1
-      with:
-          name: Output
-          path: TestProject\bin\Debug\
     - name: Run
       run: |        
         TestProject\bin\Debug\TestProject.exe
